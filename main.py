@@ -13,6 +13,14 @@ def main():
     # Load environment variables
     load_dotenv()
     
+    # Check API key
+    api_key = os.getenv('GOOGLE_API_KEY')
+    if not api_key:
+        print("❌ Error: GOOGLE_API_KEY not found in .env file")
+        print("Please add your Gemini API key to .env file:")
+        print("GOOGLE_API_KEY=AIza-your-key-here")
+        return
+    
     print("🔍 Advanced Code Analyzer with Architecture & Rules")
     print("=" * 60)
     

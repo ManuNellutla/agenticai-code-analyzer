@@ -55,6 +55,7 @@
     }
   }
 }
+```
 
 This comprehensive architecture diagram shows:
 

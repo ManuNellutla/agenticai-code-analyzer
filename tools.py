@@ -83,7 +83,8 @@ def validate_tools():
         print("✅ All tools initialized successfully")
         
         # Check API keys
-        required_keys = ['SERPER_API_KEY']
+        #required_keys = ['SERPER_API_KEY']
+        required_keys = ['GOOGLE_API_KEY']
         missing_keys = []
         
         for key in required_keys:
@@ -98,6 +99,7 @@ def validate_tools():
         
     except Exception as e:
         print(f"❌ Tool validation failed: {e}")
+        print("   Please ensure all dependencies and API keys are correctly set up.")
         return False
 
 if __name__ == "__main__":

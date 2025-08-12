@@ -1,6 +1,7 @@
-from crewai import Crew, Process
+from crewai import Crew, Process, LLM
 from agents import create_agents
 from tasks import create_tasks
+import os
 
 class CodeAnalyzerCrew:
     """Main crew for code analysis"""
@@ -10,12 +11,13 @@ class CodeAnalyzerCrew:
         self.tasks = create_tasks(self.agents)
         self.crew = self._create_crew()
     
+    
     def _create_crew(self):
         return Crew(
             agents=list(self.agents.values()),
             tasks=self.tasks,
             process=Process.sequential,
-            verbose=2
+            verbose=True
         )
     
     def run(self, inputs):
